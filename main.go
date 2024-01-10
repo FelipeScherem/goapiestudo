@@ -1,8 +1,19 @@
 package main
 
-import "github.com/FelipeScherem/goapiestudo.git/router"
+import (
+	"fmt"
+	"github.com/FelipeScherem/goapiestudo.git/config"
+	"github.com/FelipeScherem/goapiestudo.git/router"
+)
 
 func main() {
-	// Inicia o router
+	// Initialize config
+	err := config.Init()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	// Initialize o router
 	router.Initialize()
 }
