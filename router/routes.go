@@ -1,17 +1,17 @@
 package router
 
 import (
-	"github.com/FelipeScherem/goapiestudo.git/handlers"
+	"github.com/FelipeScherem/goapiestudo.git/handlers/handlerOpening"
 	"github.com/gin-gonic/gin"
 )
 
 func initializeRoutes(r *gin.Engine) {
 	v1 := r.Group("/api/v1")
 	{
-		v1.GET("/opening", handlers.ShowOpeningHandler)
-		v1.POST("/opening", handlers.CreateOpeningHandler)
-		v1.DELETE("/opening", handlers.DeleteOpeningHandler)
-		v1.PUT("/opening", handlers.UpdateOpeningHandler)
-		v1.GET("/openings", handlers.ListOpeningsHandler)
+		v1.GET("/opening", handlerOpening.ShowOpeningHandler)
+		v1.POST("/opening", handlerOpening.CreateOpeningHandler)
+		v1.DELETE("/opening", handlerOpening.DeleteOpeningHandler)
+		v1.PUT("/opening", handlerOpening.UpdateOpeningHandler)
+		v1.GET("/openings", handlerOpening.ListOpeningsHandler)
 	}
 }
